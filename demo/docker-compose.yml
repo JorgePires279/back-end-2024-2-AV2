@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  geolocation-service:
+    image: geolocation-service
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENCAGE_API_KEY=${OPENCAGE_API_KEY}
