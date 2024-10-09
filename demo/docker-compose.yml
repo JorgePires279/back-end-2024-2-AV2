@@ -1,9 +1,13 @@
 version: '3.8'
+
 services:
-  geolocation-service:
-    image: geolocation-service
-    build: .
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    volumes:
+      - /tmp
     environment:
-      - OPENCAGE_API_KEY=${OPENCAGE_API_KEY}
+      SPRING_PROFILES_ACTIVE:
